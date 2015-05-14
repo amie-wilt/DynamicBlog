@@ -6,7 +6,7 @@ ROOT = File.dirname(__FILE__)
 
 server = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => "#{ROOT}/public")
 
-server.mount_proc '/post' do |req, res|
+server.mount_proc '/blog' do |req, res|
   @page_title = "Amie's Blog."
   @blog = YAML.load_file("#{ROOT}/post.yml")
   template = ERB.new(File.read("#{ROOT}/index.html.erb"))
