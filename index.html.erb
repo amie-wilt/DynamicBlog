@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif' rel='stylesheet' type='text/css'>
   <title><%= @page_title %></title>
 </head>
 <body>
 
-<h1><%= @page_title %></h1>
-<div><% @blog.each do |post| %>
-  <h2><%= post['title'] %></h2>
-  <img src="<%= post['image'] %>" alt="" title="">
-  <p><%= post['post'] %></p>
-</div>
-<% end %>
-  
+  <div class="main-wrapper">
+    <section class="main-inner-wrapper">
+      <header>
+        <h1 class="page-title"><%= @page_title %></h1>
+      </header>
 
+      <% @blog.each do |post| %>
+      <div class="blog-wrapper">
+        <p class="blog-date"><%= post['date'] %></p>
+        <h2 class="blog-title"><%= post['title'] %></h2>
+        <img src="<%= post['image'] %>" alt="" title="" class="blog-image">
+        <p class="blog-text"><%= post['post'] %></p>
+      </div>
+      <% end %>
+    </section>
+
+    <footer>
+      <p class="footer">Amie's Blog | 2015</p>
+    </footer>
+  </div>
 </body>
 </html>
