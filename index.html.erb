@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @page_title %></title>
+</head>
+<body>
+
+<h1><%= @page_title %></h1>
+  <div><% @blog.each do |key, value| %>
+    <p><%= value %></p>
+  <% end %></div>
+
+</body>
+</html>
